@@ -1,38 +1,27 @@
 # Coverage Decisions
 
-## Riesgos a probar primero (Alta prioridad)
+## Riesgos que se probarán primero
+1. El sistema podría aprobar un pago pero no generar el pedido correspondiente
+2. El inventario podría no sincronizarse correctamente entre la aplicación web y la API
+3. El sistema podría permitir finalizar la compra sin autenticación del usuario
 
-1. El usuario no puede completar el registro correctamente
-2. Registro de usuarios duplicados
-3. Validación de datos obligatorios (campos vacíos o incorrectos)
-4. Seguridad de contraseñas
-5. Envío de correo de confirmación
+## ¿Por qué esos riesgos son prioridad?
+Estos riesgos son prioritarios porque impactan directamente en:
 
----
+- Ingresos del negocio (flujo de pago y generación de pedidos)
+- Experiencia del usuario (compras fallidas o inconsistentes)
+- Seguridad y trazabilidad de las operaciones
 
-## Justificación de prioridad
+Además, corresponden a los flujos críticos del sistema, como el checkout, la gestión de pedidos y la consistencia del inventario.
 
-Estos riesgos impactan directamente en:
+## Qué se probará menos o quedará fuera por ahora
+- Validaciones visuales de la interfaz (UI)
+- Escenarios extremos de performance
+- Funcionalidades de bajo uso dentro del sistema
 
-- La funcionalidad principal del sistema (registro de usuarios)
-- La seguridad de la información
-- La integridad de los datos
-- La experiencia del usuario
+## Justificación de exclusiones
+Las áreas excluidas tienen menor impacto inmediato en el negocio y no afectan directamente los flujos principales de generación de ingresos.
 
-Si alguno de estos falla, el sistema pierde valor para el negocio y puede afectar la confianza del usuario.
+Estas serán consideradas en fases posteriores, una vez que los flujos críticos estén validados y estabilizados.
 
----
-
-## Riesgos de menor prioridad
-
-- Diseño visual de la pantalla
-- Compatibilidad con navegadores poco utilizados
-- Mensajes secundarios no críticos
-
----
-
-## Justificación de exclusión
-
-Se prioriza validar primero que el sistema funcione correctamente, sea seguro y permita registrar usuarios sin errores.
-
-Los aspectos visuales o secundarios pueden ser evaluados en etapas posteriores sin afectar el funcionamiento principal del sistema.
+El enfoque inicial se centra en asegurar que el sistema funcione correctamente en los procesos clave de compra y gestión de pedidos.
