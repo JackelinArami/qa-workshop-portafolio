@@ -14,7 +14,9 @@ Jackelin Arami Peña Cabrera
 
 ## DESGLOSE DE TAREAS
 10 min: Exploración del catálogo y selección de productos
+
 20 min: Pruebas sobre el carrito (agregar, eliminar, repetir productos)
+
 10 min: Validación del flujo de compra y comportamiento ante mensajes del sistema
 
 ## ARCHIVOS DE DATOS
@@ -22,17 +24,26 @@ Datos propios generados durante la navegación (productos disponibles en el sist
 
 ## NOTAS DE PRUEBA
 Se agregaron múltiples productos al carrito desde distintas categorías, observando que el sistema permite agregar productos repetidos sin una regla clara de consolidación.
+
 Se probaron productos duplicados para evaluar si el sistema los agrupa o los muestra de forma individual, detectando falta de consistencia en su representación.
+
 Se eliminaron productos de forma progresiva hasta dejar el carrito vacío, evaluando el comportamiento del sistema en este estado.
+
 Se validó el comportamiento ante mensajes de advertencia, observando que estos no siempre bloquean el flujo de compra.
+
 Se intentó continuar el proceso de compra luego de recibir mensajes inconsistentes, verificando que el sistema permite avanzar sin validar correctamente el estado del carrito.
+
 Se percibió lentitud en la carga de algunas páginas durante la navegación, lo que podría afectar la experiencia del usuario.
 
 ## LISTA DE RIESGOS
 El sistema podría calcular incorrectamente el total y subtotal del carrito.
+
 El usuario podría continuar el proceso de compra con información inconsistente.
+
 El carrito podría no reflejar correctamente el estado real de los productos.
+
 Problemas de rendimiento podrían afectar la experiencia del usuario y la finalización de compras.
+
 La falta de claridad en la gestión de productos repetidos podría generar confusión en el usuario.
 
 ## DEFECTOS (BUGS)
